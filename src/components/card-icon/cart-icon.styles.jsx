@@ -1,4 +1,22 @@
-.cart-icon-container {
+import styled from "styled-components";
+
+export const IconCotainer = styled.div`
+    width: 45px;
+    height: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+`
+
+
+
+
+
+
+/*.cart-icon-container {
     width: 45px;
     height: 45px;
     position: relative;
@@ -19,4 +37,4 @@
       bottom: 12px;
     }
   }
-  
+  */
