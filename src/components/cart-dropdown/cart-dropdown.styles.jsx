@@ -25,6 +25,12 @@ export const CartDropdownContainer = styled.div`
 
 `;
 
+export const EmptyCart = styled.h2`
+  font-size: 18px;
+  margin: 50px auto;
+`;
+
+
 export const CartItemsContainer = styled.div`
   height: 240px;
   display: flex;
@@ -32,7 +38,3 @@ export const CartItemsContainer = styled.div`
   overflow: scroll;
 `;
 
-export const EmptyCart = styled.h2`
-  font-size: 18px;
-  margin: 50px auto;
-`;

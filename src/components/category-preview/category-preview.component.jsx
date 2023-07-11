@@ -4,7 +4,7 @@ import {Title , CategoryPreviewContainer , Preview} from "./category-preview.sty
 
 const CategoryPreview = ({ title, products }) => {
   return (
-    <CategoryPreview>
+    <CategoryPreviewContainer>
       <h2>
         <Link to={title}>
           <Title className="title"> {title.toUpperCase()} </Title>
@@ -17,7 +17,7 @@ const CategoryPreview = ({ title, products }) => {
             <ProductCard key={product.id} product={product} />
           ))}
       </Preview>
-    </CategoryPreview>
+    </CategoryPreviewContainer>
   );
 };
 

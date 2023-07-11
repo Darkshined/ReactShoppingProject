@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BackgroundImage = styled.div``;
+
 
 export const BackgroundImageContainer = styled.div`
   width: 100%;
@@ -27,6 +27,7 @@ export const Body = styled.div`
     margin: 0 6px 0;
     font-size: 22px;
     color: #4a4a4a;
+    text-transform:uppercase;
   }
 
   p {
@@ -59,9 +60,6 @@ export const CategoryItemContainer = styled.div`
     }
   }
 
-  &.large {
-    height: 380px;
-  }
 
   &:first-child {
     margin-right: 7.5px;
