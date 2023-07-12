@@ -7,6 +7,8 @@ import { useState} from "react";
 import  Button,{ BUTTON_TYPE_CLASSES}   from "../button/button.component"; 
 import FormInput from "../form-input/form-input.component";
 import "./sign-in-form.style.scss";
+import { SignInContainer,ButtonsContainers } from "./sign-in-form.style";
+
 
 const defaultFormFields = {
   email: "",
@@ -55,7 +57,7 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="sign-in-container">
+    <SignInContainer>
       <h2>I already have an account </h2>
       <span>Sign in with your email and password</span>
       <div className="signin-info">
@@ -76,7 +78,7 @@ const SignInForm = () => {
             name="password"
             value={password}
           />
-          <div className="buttons-container">
+          <ButtonsContainers>
             <Button buttontype={BUTTON_TYPE_CLASSES.base} type="submit">
               Sign in
             </Button>
@@ -87,10 +89,10 @@ const SignInForm = () => {
             >
               Sign in with Google
             </Button>
-          </div>
+          </ButtonsContainers>
         </form>
       </div>
-    </div>
+    </SignInContainer>
   );
 };
 
