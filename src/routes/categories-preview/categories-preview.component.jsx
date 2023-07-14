@@ -1,7 +1,7 @@
 import { Fragment, useContext } from "react";
 import { CategoriesContext } from "../../context/categories.context";
 import CategoryPreview from "../../components/category-preview/category-preview.component";
-import "./categories-preview.style.scss";
+
 
 const CategoriesPreview = () => {
   const { currentCategories } = useContext(CategoriesContext);
