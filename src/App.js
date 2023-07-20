@@ -24,7 +24,7 @@ const dispatch = useDispatch()
     });
 
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>
