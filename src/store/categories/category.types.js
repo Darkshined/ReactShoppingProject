@@ -4,4 +4,4 @@ export const CATEGORIES_ACTION_TYPE = {
 
 }
 
-export default CATEGORY_ACTION_TYPES;
+export default CATEGORIES_ACTION_TYPE;

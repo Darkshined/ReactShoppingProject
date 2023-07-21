@@ -8,8 +8,9 @@ import Checkout from './routes/checkout-page/checkout.component'
 import {
   onAuthStateChangeListener,createUserDocumentFromAuth} from "./utils/firebase/firebase.utils"
 import {setCurrentUser} from './store/user/user.action'
+import { setCurrentCategory } from "./store/categories/category.action";
 import { useDispatch } from "react-redux";
-
+import { getCategoriesAndDocuments } from "./utils/firebase/firebase.utils";
 const App = () => {
 
 const dispatch = useDispatch()
@@ -25,6 +26,16 @@ const dispatch = useDispatch()
 
     return unsubscribe;
   }, [dispatch]);
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const categoriesMap = await getCategoriesAndDocuments();
+      dispatch(setCurrentCategory(categoriesMap));
+    };
+ 
+    getCategories();
+    
+  }, []);
 
   return (
     <Routes>

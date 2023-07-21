@@ -3,11 +3,10 @@ import {
   createUserDocumentFromAuth,
   signUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
-import { useState} from "react";
-import  Button,{ BUTTON_TYPE_CLASSES}   from "../button/button.component"; 
+import { useState } from "react";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
-import { SignInContainer,ButtonsContainers } from "./sign-in-form.style";
-
+import { SignInContainer, ButtonsContainers } from "./sign-in-form.style";
 
 const defaultFormFields = {
   email: "",
@@ -18,11 +17,12 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-
-
   const SignInWithGoogle = async () => {
-     await signInWithGooglePopUp();
-
+    try {
+      await signInWithGooglePopUp();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const resetSignInForm = () => {
@@ -35,11 +35,11 @@ const SignInForm = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const handleSummit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const { user } = await signUserWithEmailAndPassword(email, password);
+      await signUserWithEmailAndPassword(email, password);
       resetSignInForm();
     } catch (error) {
       switch (error.code) {
@@ -60,7 +60,7 @@ const SignInForm = () => {
       <h2>I already have an account </h2>
       <span>Sign in with your email and password</span>
       <div className="signin-info">
-        <form onSubmit={handleSummit}>
+        <form onSubmit={handleSubmit}>
           <FormInput
             label="Email"
             type="text"
