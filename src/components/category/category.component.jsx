@@ -5,6 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import { CategoriesContext } from "../../context/categories.context";
 import ProductCard from "../product-card/product-card.component";
 import { CategoryContainer, Title } from "./category.style";
+import { UseSelector } from "react-redux/es/hooks/useSelector";
+
 
 const Category = () => {
   const { category } = useParams();
