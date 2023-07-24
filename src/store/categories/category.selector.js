@@ -1,5 +1,9 @@
-export const selectCurrentCategory = (state) => {
-    const categoriesMap = state.category.currentCategories.reduce(
+export const selectCurrentCategory = (state) => state.category.currentCategories;
+
+    
+    
+    
+    /*.reduce(
       (acc, { title, items }) => {
         acc[title.toLowerCase()] = items;
         return acc;
@@ -9,4 +13,4 @@ export const selectCurrentCategory = (state) => {
     return categoriesMap;
   };
 
-export default selectCurrentCategory;
+export default selectCurrentCategory;*/
