@@ -3,4 +3,4 @@ import { createAction } from "../../utils/reducer"
 
 
 export const setCurrentCategory = (categories) => 
-  createAction({type:CATEGORIES_ACTION_TYPE.SET_CURRENT_CATEGORIES}, categories);
+  createAction(CATEGORIES_ACTION_TYPE.SET_CURRENT_CATEGORIES, categories);
