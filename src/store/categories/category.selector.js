@@ -1,16 +1,20 @@
-export const selectCurrentCategory = (state) => state.category.currentCategories;
+import { createSelector } from "reselect";
 
-    
-    
-    
-    /*.reduce(
-      (acc, { title, items }) => {
-        acc[title.toLowerCase()] = items;
-        return acc;
-      },
-      {}
-    );
-    return categoriesMap;
-  };
+const selectCategoryReducer = (state) => state.categories;
 
-export default selectCurrentCategory;*/
+export const selectCategories = createSelector(
+  [selectCategoryReducer],
+  (categoriesSlice) => categoriesSlice.categories
+);
+
+export const selectCurrentCategory = createSelector(
+  [selectCategories],
+  (categories) =>
+    categories.reduce((acc, category) => {
+      const { title, items } = category;
+      acc[title.toLowerCase()] = items;
+      return acc;
+    }, {})
+);
+
+
